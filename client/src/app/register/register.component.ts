@@ -23,10 +23,14 @@ export class RegisterComponent implements OnInit {
         this.cancel();
       },
       // error: (error: any) => console.log(error),
-      error: error => this.toastr.error(error.error)
+      //error: error => this.toastr.error(error.error)
 
-    })
-  }
+          error: error => {
+            this.toastr.error(error.error);
+            console.log(error);
+          }
+        })
+      }
 
   cancel() {
     this.cancelRegister.emit(false);
