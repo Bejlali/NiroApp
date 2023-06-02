@@ -54,3 +54,5 @@ C:\NiroApp\API\bin\Debug\net7.0\Npgsql.EntityFrameworkCore.PostgreSQL.Design.dll
 C:\NiroApp\API\bin\Debug\net7.0\System.CodeDom.dll
 C:\NiroApp\API\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll
 C:\NiroApp\API\bin\Debug\net7.0\Data\UserSeedData.json
+C:\NiroApp\API\bin\Debug\net7.0\AutoMapper.dll
+C:\NiroApp\API\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
