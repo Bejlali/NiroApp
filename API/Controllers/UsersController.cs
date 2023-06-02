@@ -42,9 +42,9 @@ namespace API.Controllers
             return user; */
             //return await _context.Users.FindAsync(id);
             //return await _userRepository.GetUserByUsernameAsync(username);
-              var user =  await _userRepository.GetUserByUsernameAsync(username);
-              return _mapper.Map<MemberDto>(user);
-                
+            // var user =  await _userRepository.GetUserByUsernameAsync(username);
+            // return _mapper.Map<MemberDto>(user);
+           return await _userRepository.GetMemberAsync(username); 
 
         }
 

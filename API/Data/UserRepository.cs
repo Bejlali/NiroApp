@@ -22,14 +22,14 @@ namespace API.Data
         {
                 return await _context.Users
                 .Where(x => x.UserName == username)
-                .Select(user => new MemberDto
+/*                 .Select(user => new MemberDto
                 {
                     Id = user.Id,
                     UserName = user.UserName,
                     KnownAs = user.KnownAs
                 }
-                )
-                //.ProjectTo<MemberDto>(_mapper.ConfigurationProvider)
+                ) */
+                .ProjectTo<MemberDto>(_mapper.ConfigurationProvider)
                 .SingleOrDefaultAsync();
         }
 
