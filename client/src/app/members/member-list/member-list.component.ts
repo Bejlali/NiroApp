@@ -24,8 +24,6 @@ export class MemberListComponent implements OnInit {
       next: members => this.members= members
       }
       )
-
-
     }
 
 }
