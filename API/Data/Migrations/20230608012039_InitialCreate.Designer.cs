@@ -9,11 +9,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
-namespace API.Migrations
+namespace API.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230601200110_ExtendedUserEntity3")]
-    partial class ExtendedUserEntity3
+    [Migration("20230608012039_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -54,10 +54,19 @@ namespace API.Migrations
                     b.Property<string>("Email")
                         .HasColumnType("text");
 
+                    b.Property<string>("Extension")
+                        .HasColumnType("text");
+
+                    b.Property<string>("External_id")
+                        .HasColumnType("text");
+
                     b.Property<string>("FName")
                         .HasColumnType("text");
 
                     b.Property<string>("Gender")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Groups")
                         .HasColumnType("text");
 
                     b.Property<string>("Interests")
