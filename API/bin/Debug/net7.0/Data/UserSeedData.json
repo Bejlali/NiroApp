@@ -11,12 +11,6 @@
       "Interests": "Velit in commodo officia ipsum est quis adipisicing adipisicing laboris eiusmod magna nostrud quis.",
       "City": "Iola",
       "Country": "Guatemala",
-      "Photos": [
-        {
-          "url": "https://randomuser.me/api/portraits/women/39.jpg",
-          "isMain": true
-        }
-      ],
       "FName": "Mable",
       "LName": "Myrna Blackburn",
       "Email": "myrnablackburn@xth.com",
@@ -26,7 +20,14 @@
       "Extension": "339",
       "Address": "186 Rugby Road, Itmann, Virgin Islands, 8570",
       "Groups": "labore",
-      "External_id": "eiusmod"
+      "External_id": "eiusmod",
+      "Photos": [
+        {
+          "Url": "https://randomuser.me/api/portraits/women/39.jpg",
+          "isMain": true
+        }
+      ]
+
     },
     {
       "UserName": "Gena",
@@ -40,12 +41,6 @@
       "Interests": "Labore adipisicing culpa excepteur nulla quis deserunt elit cupidatat eu ad sint qui qui culpa.",
       "City": "Coultervillle",
       "Country": "Tanzania",
-      "Photos": [
-        {
-          "url": "https://randomuser.me/api/portraits/women/35.jpg",
-          "isMain": true
-        }
-      ],
       "FName": "Erika",
       "LName": "Deena Roy",
       "Email": "deenaroy@xth.com",
@@ -55,7 +50,14 @@
       "Extension": "332",
       "Address": "298 Dean Street, Wanamie, South Carolina, 8858",
       "Groups": "reprehenderit",
-      "External_id": "tempor"
+      "External_id": "tempor",
+      "Photos": [
+        {
+          "Url": "https://randomuser.me/api/portraits/women/35.jpg",
+          "isMain": true
+        }
+      ]
+
     },
     {
       "UserName": "Elizabeth",
@@ -69,12 +71,6 @@
       "Interests": "Labore laboris consectetur do ut.",
       "City": "Rew",
       "Country": "Cyprus",
-      "Photos": [
-        {
-          "url": "https://randomuser.me/api/portraits/women/75.jpg",
-          "isMain": true
-        }
-      ],
       "FName": "Ericka",
       "LName": "Jaclyn Todd",
       "Email": "jaclyntodd@xth.com",
@@ -84,7 +80,14 @@
       "Extension": "328",
       "Address": "423 Seagate Avenue, Hegins, Illinois, 9283",
       "Groups": "id",
-      "External_id": "incididunt"
+      "External_id": "incididunt",
+      "Photos": [
+        {
+          "Url": "https://randomuser.me/api/portraits/women/75.jpg",
+          "isMain": true
+        }
+      ]
+      
     },
     {
       "UserName": "Mamie",
@@ -98,12 +101,6 @@
       "Interests": "Mollit duis nisi eiusmod aliquip eiusmod minim reprehenderit est est eiusmod deserunt qui eiusmod.",
       "City": "Wattsville",
       "Country": "Lesotho",
-      "Photos": [
-        {
-          "url": "https://randomuser.me/api/portraits/women/25.jpg",
-          "isMain": true
-        }
-      ],
       "FName": "Bianca",
       "LName": "Rachelle Goodman",
       "Email": "rachellegoodman@xth.com",
@@ -113,7 +110,14 @@
       "Extension": "330",
       "Address": "437 Meadow Street, Fontanelle, Arizona, 2805",
       "Groups": "adipisicing",
-      "External_id": "velit"
+      "External_id": "velit",
+      "Photos": [
+        {
+          "Url": "https://randomuser.me/api/portraits/women/25.jpg",
+          "isMain": true
+        }
+      ]
+
     },
     {
       "UserName": "Martha",
@@ -127,12 +131,6 @@
       "Interests": "Ullamco culpa ea nisi officia occaecat dolor ipsum ad dolore exercitation aliquip voluptate incididunt exercitation.",
       "City": "Hiseville",
       "Country": "Andorra",
-      "Photos": [
-        {
-          "url": "https://randomuser.me/api/portraits/women/1.jpg",
-          "isMain": true
-        }
-      ],
       "FName": "Bethany",
       "LName": "Kane Gould",
       "Email": "kanegould@xth.com",
@@ -142,7 +140,14 @@
       "Extension": "326",
       "Address": "734 Fayette Street, Hampstead, Guam, 1248",
       "Groups": "exercitation",
-      "External_id": "consectetur"
+      "External_id": "consectetur",
+      "Photos": [
+        {
+          "Url": "https://randomuser.me/api/portraits/women/1.jpg",
+          "isMain": true
+        }
+      ]
+      
     }
     ,
     {
@@ -157,12 +162,6 @@
       "Interests": "Cupidatat sunt aliquip ut adipisicing cupidatat consequat velit excepteur et.",
       "City": "Rehrersburg",
       "Country": "Puerto Rico",
-      "Photos": [
-        {
-          "url": "https://randomuser.me/api/portraits/men/39.jpg",
-          "isMain": true
-        }
-      ],
       "FName": "Beasley",
       "LName": "Thompson Walsh",
       "Email": "thompsonwalsh@medalert.com",
@@ -172,7 +171,13 @@
       "Extension": "325",
       "Address": "291 Alton Place, Bennett, Oregon, 7314",
       "Groups": "ad",
-      "External_id": "officia"
+      "External_id": "officia",
+      "Photos": [
+        {
+          "Url": "https://randomuser.me/api/portraits/men/39.jpg",
+          "isMain": true
+        }
+      ]
     },
     {
       "UserName": "Mcintyre",
@@ -186,12 +191,6 @@
       "Interests": "Pariatur exercitation ad et eu.",
       "City": "Monument",
       "Country": "Virgin Islands (US)",
-      "Photos": [
-        {
-          "url": "https://randomuser.me/api/portraits/men/15.jpg",
-          "isMain": true
-        }
-      ],
       "FName": "Mooney",
       "LName": "Carissa Dillard",
       "Email": "carissadillard@medalert.com",
@@ -201,7 +200,13 @@
       "Extension": "329",
       "Address": "282 Boerum Place, Juntura, Alabama, 3078",
       "Groups": "ea",
-      "External_id": "cillum"
+      "External_id": "cillum",
+      "Photos": [
+        {
+          "Url": "https://randomuser.me/api/portraits/men/15.jpg",
+          "isMain": true
+        }
+      ]
     },
     {
       "UserName": "Gay",
@@ -215,12 +220,6 @@
       "Interests": "Ullamco dolore aliqua deserunt aliqua officia qui do.",
       "City": "Advance",
       "Country": "Cuba",
-      "Photos": [
-        {
-          "url": "https://randomuser.me/api/portraits/men/43.jpg",
-          "isMain": true
-        }
-      ],
       "FName": "Kidd",
       "LName": "Crosby Gay",
       "Email": "crosbygay@medalert.com",
@@ -230,7 +229,14 @@
       "Extension": "325",
       "Address": "521 Hopkins Street, Detroit, West Virginia, 7411",
       "Groups": "et",
-      "External_id": "quis"
+      "External_id": "quis",
+      "Photos": [
+        {
+          "Url": "https://randomuser.me/api/portraits/men/43.jpg",
+          "isMain": true
+        }
+      ]
+
     },
     {
       "UserName": "Delacruz",
@@ -244,12 +250,6 @@
       "Interests": "Id magna magna do exercitation deserunt.",
       "City": "Mammoth",
       "Country": "Angola",
-      "Photos": [
-        {
-          "url": "https://randomuser.me/api/portraits/men/55.jpg",
-          "isMain": true
-        }
-      ],
       "FName": "Wright",
       "LName": "Tessa Hamilton",
       "Email": "tessahamilton@medalert.com",
@@ -259,7 +259,13 @@
       "Extension": "321",
       "Address": "281 Herkimer Court, Remington, Wisconsin, 5445",
       "Groups": "sunt",
-      "External_id": "velit"
+      "External_id": "velit",
+      "Photos": [
+        {
+          "Url": "https://randomuser.me/api/portraits/men/55.jpg",
+          "isMain": true
+        }
+      ]
     },
     {
       "UserName": "Stanley",
@@ -273,12 +279,6 @@
       "Interests": "Voluptate ut duis culpa excepteur voluptate consequat eu in velit est officia irure.",
       "City": "Vincent",
       "Country": "Reunion",
-      "Photos": [
-        {
-          "url": "https://randomuser.me/api/portraits/men/86.jpg",
-          "isMain": true
-        }
-      ],
       "FName": "Charles",
       "LName": "Cash Albert",
       "Email": "cashalbert@medalert.com",
@@ -288,7 +288,13 @@
       "Extension": "320",
       "Address": "778 Clifton Place, Kerby, Kentucky, 3056",
       "Groups": "elit",
-      "External_id": "sint"
+      "External_id": "sint",
+      "Photos": [
+        {
+          "Url": "https://randomuser.me/api/portraits/men/86.jpg",
+          "isMain": true
+        }
+      ]
     }
     
     ]
