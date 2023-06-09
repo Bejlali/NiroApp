@@ -17,10 +17,10 @@
   [label]="'Username'"></app-text-input>
 <app-text-input [formControl]="$any(registerForm.controls['knownAs'])"
   [label]="'Known As'"></app-text-input>
-   <app-text-input [formControl]="$any(registerForm.controls['dateOfBirth'])"
-  [label]="'Date of Birth'" [type]="'date'"></app-text-input >
-<!-- <app-date-picker [formControl]="$any(registerForm.controls['dateOfBirth'])"
-  [label]="'Date of Birth'" [maxDate]="maxDate"></app-date-picker > -->
+   <app-date-picker [formControl]="$any(registerForm.controls['dateOfBirth'])"
+  [label]="'Date of Birth'" [maxDate]="maxDate"></app-date-picker >
+<!-- <app-text-input [formControl]="$any(registerForm.controls['dateOfBirth'])"
+  [label]="'Date of Birth'" [maxDate]="maxDate"></app-text-input > -->
 <app-text-input [formControl]="$any(registerForm.controls['city'])"
   [label]="'City'"></app-text-input>
 <app-text-input [formControl]="$any(registerForm.controls['country'])"
