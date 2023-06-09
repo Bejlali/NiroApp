@@ -24,6 +24,7 @@
     "devextreme": "22.2.6",
     "devextreme-angular": "22.2.6",
     "font-awesome": "^4.7.0",
+    "ng2-file-upload": "^3.0.0",
     "ngx-bootstrap": "^10.2.0",
     "ngx-spinner": "^15.0.1",
     "ngx-toastr": "^16.2.0",
