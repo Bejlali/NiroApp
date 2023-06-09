@@ -28,8 +28,14 @@ export class RegisterComponent implements OnInit {
       //this.registerForm = new FormGroup({
      // username: new FormControl(),
       //username: new FormControl('', Validators.required),
+
       username: ['', Validators.required],
       //password: new FormControl('', [Validators.required, Validators.minLength(8),Validators.maxLength(12)]),
+      gender: ['male'],
+      knownAs: ['', Validators.required],
+      dateOfBirth: ['', Validators.required],
+      city: ['', Validators.required],
+      country: ['', Validators.required],
       password: ['', [Validators.required, Validators.minLength(8),Validators.maxLength(12)]],
       //confirmPassword: new FormControl('' , [Validators.required, this.matchValues('password')]),
       confirmPassword: ['' , [Validators.required, this.matchValues('password')]],
@@ -38,17 +44,7 @@ export class RegisterComponent implements OnInit {
 
 
     });
-/*     this.registerForm = this.fb.group({
-      gender: ['male'],
-      username: ['', Validators.required],
-      knownAs: ['', Validators.required],
-      dateOfBirth: ['', Validators.required],
-      city: ['', Validators.required],
-      country: ['', Validators.required],
-      password: ['', [Validators.required,
-        Validators.minLength(4), Validators.maxLength(8)]],
-      confirmPassword: ['', [Validators.required, this.matchValues('password')]],
-    }); */
+
     this.registerForm.controls['password'].valueChanges.subscribe({
       next: () => this.registerForm.controls['confirmPassword'].updateValueAndValidity()
     })

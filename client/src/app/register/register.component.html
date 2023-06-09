@@ -17,6 +17,8 @@
   [label]="'Username'"></app-text-input>
 <app-text-input [formControl]="$any(registerForm.controls['knownAs'])"
   [label]="'Known As'"></app-text-input>
+   <app-text-input [formControl]="$any(registerForm.controls['dateOfBirth'])"
+  [label]="'Date of Birth'" [type]="'date'"></app-text-input >
 <!-- <app-date-picker [formControl]="$any(registerForm.controls['dateOfBirth'])"
   [label]="'Date of Birth'" [maxDate]="maxDate"></app-date-picker > -->
 <app-text-input [formControl]="$any(registerForm.controls['city'])"
@@ -29,8 +31,8 @@
 <app-text-input [formControl]="$any(registerForm.controls['confirmPassword'])"
   [label]="'Confirm Password'"
   [type]="'password'"></app-text-input>
-<!--
-<div class="row" *ngIf="validationErrors">
+
+<!-- <div class="row" *ngIf="validationErrors">
   <ul class="text-danger">
       <li *ngFor="let error of validationErrors">
           {{error}}
