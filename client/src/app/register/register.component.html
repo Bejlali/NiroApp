@@ -5,13 +5,17 @@
   <hr>
 
   <div class="mb-3">
-      <input type="text"
+      <input
+          type="text"
+          [class.is-invalid]="registerForm.get('username')?.errors && registerForm.get('username')?.touched"
           class="form-control"
           formControlName="username"
           placeholder="Username">
+          <div class="invalid-feedback">Please Enter A Username</div>
   <!-- name="username" -->
   <!-- [(ngModel)]="model.username" -->
   </div>
+
 
   <!--
   <div class="mb-3">
@@ -24,19 +28,29 @@
   </div> -->
 
   <div class="mb-3">
-      <input type="password"
+      <input
+          type="password"
+          [class.is-invalid]="registerForm.get('password')?.errors && registerForm.get('password')?.touched"
           class="form-control"
           formControlName="password"
           placeholder="Password">
+          <div class="invalid-feedback" *ngIf="registerForm.get('password')?.hasError('required')">Please Enter A Password</div>
+          <div class="invalid-feedback" *ngIf="registerForm.get('password')?.hasError('minlength')">Password Must Be At Least 8 Charachters</div>
+          <div class="invalid-feedback" *ngIf="registerForm.get('password')?.hasError('required')">Password Must Be At Least 12 Charachters</div>
 <!--           name="password"
           [(ngModel)]="model.password" -->
   </div>
 
   <div class="mb-3">
-      <input type="password"
+      <input
+          type="password"
+          [class.is-invalid]="registerForm.get('confirmPassword')?.errors && registerForm.get('confirmPassword')?.touched"
           class="form-control"
           formControlName="confirmPassword"
           placeholder="Confirm Password">
+          <div class="invalid-feedback" *ngIf="registerForm.get('confirmPassword')?.hasError('required')">Please Confirm Your Password</div>
+          <div class="invalid-feedback" *ngIf="registerForm.get('confirmPassword')?.hasError('notMatching')">Confirm Password Must Match Password</div>
+
   </div>
 
 
