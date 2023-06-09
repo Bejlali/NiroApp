@@ -123,7 +123,7 @@ namespace API.Controllers
 
             return BadRequest("Problem setting the main photo");
         }
-
+            //delete added
         [HttpDelete("delete-photo/{photoId}")]
         public async Task<ActionResult> DeletePhoto(int photoId)
         {
