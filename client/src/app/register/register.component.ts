@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class RegisterComponent implements OnInit {
   // @Input () usersFromHomeComponent: any;
   @Output() cancelRegister = new EventEmitter();
-  model: any = {}
+  //model: any = {}
   //registerForm: FormGroup | undefined;
   registerForm: FormGroup = new FormGroup({});
   maxDate: Date = new Date();
@@ -40,12 +40,9 @@ export class RegisterComponent implements OnInit {
       dateOfBirth: ['', Validators.required],
       city: ['', Validators.required],
       country: ['', Validators.required],
-      password: ['', [Validators.required, Validators.minLength(8),Validators.maxLength(12)]],
+      password: ['', [Validators.required, Validators.minLength(6),Validators.maxLength(12)]],
       //confirmPassword: new FormControl('' , [Validators.required, this.matchValues('password')]),
       confirmPassword: ['' , [Validators.required, this.matchValues('password')]],
-
-
-
 
     });
 
@@ -62,7 +59,6 @@ export class RegisterComponent implements OnInit {
 
 
   register() {
-      console.log(this.registerForm?.value);
       const dob = this.getDateOnly(this.registerForm.controls['dateOfBirth'].value);
       const values = {...this.registerForm.value, dateOfBirth: dob};
       this.accountService.register(values).subscribe({
@@ -73,6 +69,8 @@ export class RegisterComponent implements OnInit {
           this.validationErrors = error
         }
       })
+    }
+
 
     // this.accountService.register(this.model).subscribe({
     //   next: () => {
@@ -87,7 +85,21 @@ export class RegisterComponent implements OnInit {
     //       }
     //     })
 
-      }
+    //console.log(this.registerForm?.value);
+    //console.log(this.registerForm.value);
+/*       this.accountService.register(this.registerForm.value).subscribe({
+        next: () => {
+          this.router.navigateByUrl('/members')
+        },
+        error: error => {
+          //this.toastr.error(error.error)
+          //console.log(error);
+          this.validationErrors = error
+
+        }
+      }) */
+
+
 
   cancel() {
     this.cancelRegister.emit(false);
