@@ -71,36 +71,6 @@ export class RegisterComponent implements OnInit {
       })
     }
 
-
-    // this.accountService.register(this.model).subscribe({
-    //   next: () => {
-    //     this.cancel();
-    //   },
-    //   // error: (error: any) => console.log(error),
-    //   //error: error => this.toastr.error(error.error)
-
-    //       error: error => {
-    //         this.toastr.error(error.error);
-    //         console.log(error);
-    //       }
-    //     })
-
-    //console.log(this.registerForm?.value);
-    //console.log(this.registerForm.value);
-/*       this.accountService.register(this.registerForm.value).subscribe({
-        next: () => {
-          this.router.navigateByUrl('/members')
-        },
-        error: error => {
-          //this.toastr.error(error.error)
-          //console.log(error);
-          this.validationErrors = error
-
-        }
-      }) */
-
-
-
   cancel() {
     this.cancelRegister.emit(false);
   }
