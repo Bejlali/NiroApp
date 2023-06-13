@@ -19,6 +19,7 @@ export class MemberListComponent implements OnInit {
   pagination: Pagination | undefined;
   userParams: UserParams | undefined;
   user: User | undefined;
+  genderList = [{ value: 'male', display: 'Males' }, { value: 'female', display: 'Females' }]
 
   //pageNumber = 1;
   //pageSize = 5;
@@ -70,6 +71,13 @@ export class MemberListComponent implements OnInit {
         }
       }) */
     }
+
+  resetFilters() {
+    if(this.user){
+    this.userParams = new UserParams(this.user);
+    this.loadMembers();
+  }
+}
     pageChanged(event: any) {
        //if (this.userParams && this.userParams?.pageNumber !== event.page) {
        if (this.userParams && this.userParams?.pageNumber !== event.page) {
