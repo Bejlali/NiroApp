@@ -20,14 +20,9 @@ export class MembersService {
 
   constructor(private http: HttpClient) {}
 
-  getMembers(page?:number, itemsPerPage?: number) {
-    let params = new HttpParams();
-    if (page && itemsPerPage){
-      params = params.append('pageNumber', page);
-      params = params.append('pageSize', itemsPerPage)
-
-
-    }
+  //getMembers(page?:number, itemsPerPage?: number) {
+  getMembers(userParams: UserParams) {
+    let params = getPaginationHeaders(userParams.pageNumber, userParams.pageSize);
 
 
     // return this.http.get<Member[]>(this.baseUrl + 'users', this.getHttpOptions());
@@ -51,6 +46,7 @@ export class MembersService {
         return members;
       }) */
     );
+
   }
 
   getMember(username: string) {
@@ -88,5 +84,14 @@ export class MembersService {
 
   deletePhoto(photoId: number) {
     return this.http.delete(this.baseUrl + 'users/delete-photo/' + photoId);
+  }
+
+  private getPaginationHeaders(pageNumber : number, pageSize : number) {
+    let params = new HttpParams();
+    //if (page && itemsPerPage) {
+      params = params.append('pageNumber', pageNumber);
+      params = params.append('pageSize', pageSize);
+    //}
+    return params;
   }
 }

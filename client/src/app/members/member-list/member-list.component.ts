@@ -57,6 +57,14 @@ export class MemberListComponent implements OnInit {
         }
       }) */
     }
+    pageChanged(event: any) {
+       //if (this.userParams && this.userParams?.pageNumber !== event.page) {
+       if (this.pageNumber !== event.page) {
+       this.pageNumber = event.page;
+      //   this.memberService.setUserParams(this.userParams);
+        this.loadMembers();
+      }
+    }
   }
 
 
