@@ -14,7 +14,7 @@ import { AccountService } from './account.service';
 export class MembersService {
   baseUrl = environment.apiUrl;
   members: Member[] = [];
-  paginatedResualt: PaginatedResult<Member[]>= new PaginatedResult<Member[]>;
+  //paginatedResualt: PaginatedResult<Member[]>= new PaginatedResult<Member[]>;
 
 
 
@@ -22,31 +22,37 @@ export class MembersService {
 
   //getMembers(page?:number, itemsPerPage?: number) {
   getMembers(userParams: UserParams) {
-    let params = getPaginationHeaders(userParams.pageNumber, userParams.pageSize);
+    let params = this.getPaginationHeaders(userParams.pageNumber, userParams.pageSize);
+
+    params = params.append('minAge', userParams.minAge);
+    params = params.append('maxAge', userParams.maxAge);
+    params = params.append('gender', userParams.gender);
+   // params = params.append('orderBy', userParams.orderBy);
 
 
     // return this.http.get<Member[]>(this.baseUrl + 'users', this.getHttpOptions());
     //return this.http.get<Member[]>(this.baseUrl + 'users');
    // if (this.members.length > 0) return of(this.members);
 
-   return this.http.get<Member[]>(this.baseUrl + 'users', {observe: 'response', params}).pipe(
-    map(response =>{
-      if (response.body){
-      this.paginatedResualt.result = response.body;
-    }
-    const pagination = response.headers.get('Pagination');
-    if (pagination){
-      this.paginatedResualt.pagination = JSON.parse(pagination);
-    }
-    return this.paginatedResualt;
-  })
+   return this.getPaginatedresult<Member[]>(this.baseUrl+ 'users', params);
 
-/*       map((members) => {
-        this.members = members;
-        return members;
-      }) */
+  }
+
+  private getPaginatedresult<T>(url: string, params: HttpParams) {
+    const paginatedResualt: PaginatedResult<T> = new PaginatedResult<T>
+    return this.http.get<T>(url, { observe: 'response', params }).pipe(
+      map(response => {
+        if (response.body) {
+          paginatedResualt.result = response.body;
+        }
+        const pagination = response.headers.get('Pagination');
+        if (pagination) {
+         paginatedResualt.pagination = JSON.parse(pagination);
+        }
+        return paginatedResualt;
+      })
+
     );
-
   }
 
   getMember(username: string) {
