@@ -18,9 +18,7 @@ namespace API.Controllers
      [Route("api/[controller]")]  // /api/user ===> UserController ==>api/user*/
     public class UsersController : BaseApiController
     {
-        // private readonly DataContext _context;
-        //public UsersController(DataContext context)
-        //_context = context;
+
         private readonly IUserRepository _userRepository;
         private readonly IMapper _mapper;
         private readonly IPhotoService _photoService;
@@ -35,7 +33,7 @@ namespace API.Controllers
 
         //[AllowAnonymous]
         [HttpGet]
-        //public async Task<ActionResult<IEnumerable<AppUser>>> GetUsers()
+    
         public async Task<ActionResult<PagedList<MemberDto>>> GetUsers([FromQuery]UserParams userParams)
         {
             var currentUser = await _userRepository.GetUserByUsernameAsync(User.GetUsername());
@@ -48,28 +46,20 @@ namespace API.Controllers
 
             var users = await _userRepository.GetMembersAsync(userParams);
             Response.AddPaginationHeader(new PaginationHeader(users.CurrentPage, users.PageSize, users.TotalCount, users.TotalPages ));
-            //var usersToReturn = _mapper.Map<IEnumerable<MemberDto>>(users);
-            // return Ok(usersToReturn);
+
             return Ok(users);
         }
 
         [HttpGet("{username}")]
-        //public async Task<ActionResult<AppUser>> GetUser(string username)
         public async Task<ActionResult<MemberDto>> GetUser(string username)
         {
-            /*          var user = await _context.Users.FindAsync(id); // or return _context.Users.Find(id); 
-                        return user; */
-            //return await _context.Users.FindAsync(id);
-            //return await _userRepository.GetUserByUsernameAsync(username);
-            // var user =  await _userRepository.GetUserByUsernameAsync(username);
-            // return _mapper.Map<MemberDto>(user);
+      
             return await _userRepository.GetMemberAsync(username);
 
         }
         [HttpPut]
         public async Task<ActionResult> UpdateUser(MemberUpdateDto memberUpdateDto)
         {
-            //var username = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
             var username = User.GetUsername();
             
             var user = await _userRepository.GetUserByUsernameAsync(username);

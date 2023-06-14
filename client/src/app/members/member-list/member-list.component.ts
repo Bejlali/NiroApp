@@ -20,6 +20,7 @@ export class MemberListComponent implements OnInit {
   userParams: UserParams | undefined;
   user: User | undefined;
   genderList = [{ value: 'male', display: 'Males' }, { value: 'female', display: 'Females' }]
+  
 
   //pageNumber = 1;
   //pageSize = 5;
