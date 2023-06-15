@@ -10,17 +10,14 @@ namespace API.Helpers
             get => _pageSize;
             set => _pageSize = (value > MaxPageSize) ? MaxPageSize : value;
         }
-
         public string CurrentUsername { get; set; }
         public string Gender { get; set; }
         public int MinAge { get; set; } = 18;
         public int MaxAge { get; set; } = 100;
-        public string Status { get; set; }
-        public string Type { get; set; }
-        public string Groups { get; set; }
-       
-       
-        /*  public string OrderBy { get; set; } = "lastActive"; */
+        public string Status { get; set; } = "Active";
+        public string Type { get; set; } = "Employee";
+        public string Groups { get; set; } = "Team";
+         public string OrderBy { get; set; } = "lastActive";
 
     }
 }

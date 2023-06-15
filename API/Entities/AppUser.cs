@@ -1,5 +1,3 @@
-using API.Extensions;
-
 namespace API.Entities
 {
     public class AppUser
@@ -10,14 +8,13 @@ namespace API.Entities
         public byte[] PasswordSalt { get; set; }
         public DateOnly DateOfBirth { get; set; }
         public string KnownAs { get; set; }
-        public DateTime Created { get; set; } = DateTime.UtcNow;
-        public DateTime LastActive { get; set; } = DateTime.UtcNow;
         public string Gender { get; set; }
         public string Introduction { get; set; }
         public string LookingFor { get; set; }
         public string Interests { get; set; }
         public string City { get; set; }
         public string Country { get; set; }
+        public DateTime LastActive { get; set; } = DateTime.UtcNow;
         public List<Photo> Photos { get; set; } = new();
         //my fields//---
         public string FName { get; set; }
@@ -30,15 +27,20 @@ namespace API.Entities
         public string Extension { get; set; }
         public string Address { get; set; }
         public string Groups { get; set; }
-       public string Parent_Id { get; set; }
+        //General Fields
+        public string Parent_Id { get; set; }
         public string Status { get; set; }
         public string Type { get; set; }
         public string External_id { get; set; }
-        
+        public string CreatedBy { get; set; }
+        public string ModifiedBy { get; set; }
+        public DateTime Created { get; set; } = DateTime.UtcNow;
+        public DateTime LastModified { get; set; } = DateTime.UtcNow;
 
-/*         public int GetAge()
-        {
-            return DateOfBirth.CalcuateAge();
-        } */
+
+        /*         public int GetAge()
+                {
+                    return DateOfBirth.CalcuateAge();
+                } */
     }
 }

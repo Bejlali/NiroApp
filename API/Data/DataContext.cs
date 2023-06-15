@@ -12,6 +12,9 @@ namespace API.Data
 
         }
         public DbSet<AppUser> Users { get; set; }
+        public DbSet<AppOption> AppOptions { get; set; }
+        public DbSet<AppSetting> AppSettings { get; set; }
+
 
 
     }
