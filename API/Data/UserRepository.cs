@@ -33,7 +33,7 @@ namespace API.Data
 
             var query = _context.Users.AsQueryable();
             query = query.Where(u => u.UserName != userParams.CurrentUsername);
-            query = query.Where(u => u.Gender == userParams.Gender);
+            //query = query.Where(u => u.Gender == userParams.Gender);
             query = query.Where(u => u.Status == userParams.Status);
             query = query.Where(u => u.Groups == userParams.Groups);
             query = query.Where(u => u.Type == userParams.Type);
