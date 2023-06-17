@@ -6,13 +6,14 @@ export class UserParams {
     maxAge = 99;
     pageNumber = 1;
     pageSize = 10;
-    Status= 'Active';
-    Type= 'Employee'
+    status= 'Active';
+    type= 'Employee'
     orderBy = 'lastActive';
-    Groups = 'Team';
+    groups = 'Team';
 
 
     constructor(user: User) {
        this.gender = user.gender === 'female' ? 'male' : 'female'
     }
+
 }

@@ -22,6 +22,27 @@ export class MemberListComponent implements OnInit {
     { value: 'male', display: 'Males' },
     { value: 'female', display: 'Females' },
   ];
+  StatusList = [
+    { value: 'Active', display: 'Active' },
+    { value: 'Deactive', display: 'Deactive' },
+    { value: 'Freez', display: 'Freez' },
+
+  ];
+  TypeList = [
+    { value: 'Employee', display: 'Employee' },
+    { value: 'Customer', display: 'Customer' },
+    { value: 'API', display: 'API' },
+    { value: 'Device', display: 'Device' },
+
+  ];
+  GroupList = [
+    { value: 'Team', display: 'Team' },
+    { value: 'CareCenter', display: 'CareCenter' },
+    { value: 'Fleet', display: 'Fleet' },
+    { value: 'Finance', display: 'Finance' },
+
+  ];
+
 
   //pageNumber = 1;
   //pageSize = 5;

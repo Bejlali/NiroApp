@@ -27,7 +27,13 @@ export class MembersService {
     params = params.append('minAge', userParams.minAge);
     params = params.append('maxAge', userParams.maxAge);
     params = params.append('gender', userParams.gender);
-   // params = params.append('orderBy', userParams.orderBy);
+    params = params.append('status', userParams.status);
+    params = params.append('type', userParams.type);
+    params = params.append('groups', userParams.groups);
+
+
+
+    params = params.append('orderBy', userParams.orderBy);
 
 
     // return this.http.get<Member[]>(this.baseUrl + 'users', this.getHttpOptions());
