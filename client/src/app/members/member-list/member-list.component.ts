@@ -17,7 +17,9 @@ export class MemberListComponent implements OnInit {
   members: Member[] = [];
   pagination: Pagination | undefined;
   userParams: UserParams | undefined;
-  user: User | undefined;
+  //user: User | undefined;
+
+
   genderList = [
     { value: 'male', display: 'Males' },
     { value: 'female', display: 'Females' },
@@ -48,7 +50,7 @@ export class MemberListComponent implements OnInit {
   //pageSize = 5;
   //members: Member[]=[];
 
-  constructor(
+ /*  constructor(
     private memberService: MembersService,
     private accountService: AccountService
   ) {
@@ -60,7 +62,11 @@ export class MemberListComponent implements OnInit {
         }
       },
     });
+  } */
+  constructor(private memberService: MembersService) {
+    this.userParams = this.memberService.getUserParams();
   }
+
 
   ngOnInit(): void {
     //this.loadMembers();
@@ -75,17 +81,31 @@ export class MemberListComponent implements OnInit {
       )
     } */
 
+
+  // loadMembers() {
+  //   if (!this.userParams) return;
+  //   this.memberService.getMembers(this.userParams).subscribe({
+  //     next: (response) => {
+  //       if (response.result && response.pagination) {
+  //         this.members = response.result;
+  //         this.pagination = response.pagination;
+  //       }
+  //     },
+  //   });
+  //   /*     if (this.userParams) {
+  //     this.memberService.setUserParams(this.userParams);
+  //     this.memberService.getMembers(this.userParams).subscribe({
+  //       next: response => {
+  //         if (response.result && response.pagination) {
+  //           this.members = response.result;
+  //           this.pagination = response.pagination;
+  //         }
+  //       }
+  //     }) */
+  // }
+
   loadMembers() {
-    if (!this.userParams) return;
-    this.memberService.getMembers(this.userParams).subscribe({
-      next: (response) => {
-        if (response.result && response.pagination) {
-          this.members = response.result;
-          this.pagination = response.pagination;
-        }
-      },
-    });
-    /*     if (this.userParams) {
+    if (this.userParams) {
       this.memberService.setUserParams(this.userParams);
       this.memberService.getMembers(this.userParams).subscribe({
         next: response => {
@@ -94,20 +114,27 @@ export class MemberListComponent implements OnInit {
             this.pagination = response.pagination;
           }
         }
-      }) */
+      })
+    }
   }
 
+
+  resetFilters() {
+    this.userParams = this.memberService.resetUserParams();
+    this.loadMembers();
+  }
+/*
   resetFilters() {
     if (this.user) {
       this.userParams = new UserParams(this.user);
       this.loadMembers();
     }
-  }
+  } */
   pageChanged(event: any) {
     //if (this.userParams && this.userParams?.pageNumber !== event.page) {
     if (this.userParams && this.userParams?.pageNumber !== event.page) {
       this.userParams.pageNumber = event.page;
-      //   this.memberService.setUserParams(this.userParams);
+      this.memberService.setUserParams(this.userParams);
       this.loadMembers();
     }
   }
