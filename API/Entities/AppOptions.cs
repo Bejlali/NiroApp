@@ -11,7 +11,6 @@ namespace API.Entities
         public string OptionValue { get; set; }
         //general fields
         public string Parent_Id { get; set; }
-        public  AppSetting AppSetting { get; set; }      
         public string Type { get; set; }
         public string Status { get; set; }
         public string External_id { get; set; }

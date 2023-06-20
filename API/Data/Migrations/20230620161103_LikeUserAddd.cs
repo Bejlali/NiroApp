@@ -7,11 +7,34 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace API.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class firstAdded : Migration
+    public partial class LikeUserAddd : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "AppOptions",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    OptionId = table.Column<string>(type: "text", nullable: true),
+                    Name = table.Column<string>(type: "text", nullable: true),
+                    OptionValue = table.Column<string>(type: "text", nullable: true),
+                    Parent_Id = table.Column<string>(type: "text", nullable: true),
+                    Type = table.Column<string>(type: "text", nullable: true),
+                    Status = table.Column<string>(type: "text", nullable: true),
+                    External_id = table.Column<string>(type: "text", nullable: true),
+                    CreatedBy = table.Column<string>(type: "text", nullable: true),
+                    ModifiedBy = table.Column<string>(type: "text", nullable: true),
+                    Created = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    LastModified = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AppOptions", x => x.Id);
+                });
+
             migrationBuilder.CreateTable(
                 name: "AppSettings",
                 columns: table => new
@@ -78,32 +101,27 @@ namespace API.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "AppOptions",
+                name: "Likes",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    OptionId = table.Column<string>(type: "text", nullable: true),
-                    Name = table.Column<string>(type: "text", nullable: true),
-                    OptionValue = table.Column<string>(type: "text", nullable: true),
-                    Parent_Id = table.Column<string>(type: "text", nullable: true),
-                    AppSettingId = table.Column<int>(type: "integer", nullable: true),
-                    Type = table.Column<string>(type: "text", nullable: true),
-                    Status = table.Column<string>(type: "text", nullable: true),
-                    External_id = table.Column<string>(type: "text", nullable: true),
-                    CreatedBy = table.Column<string>(type: "text", nullable: true),
-                    ModifiedBy = table.Column<string>(type: "text", nullable: true),
-                    Created = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
-                    LastModified = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
+                    SourceUserId = table.Column<int>(type: "integer", nullable: false),
+                    TargetUserId = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_AppOptions", x => x.Id);
+                    table.PrimaryKey("PK_Likes", x => new { x.SourceUserId, x.TargetUserId });
                     table.ForeignKey(
-                        name: "FK_AppOptions_AppSettings_AppSettingId",
-                        column: x => x.AppSettingId,
-                        principalTable: "AppSettings",
-                        principalColumn: "Id");
+                        name: "FK_Likes_Users_SourceUserId",
+                        column: x => x.SourceUserId,
+                        principalTable: "Users",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Likes_Users_TargetUserId",
+                        column: x => x.TargetUserId,
+                        principalTable: "Users",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -129,9 +147,9 @@ namespace API.Data.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_AppOptions_AppSettingId",
-                table: "AppOptions",
-                column: "AppSettingId");
+                name: "IX_Likes_TargetUserId",
+                table: "Likes",
+                column: "TargetUserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Photos_AppUserId",
@@ -146,10 +164,13 @@ namespace API.Data.Migrations
                 name: "AppOptions");
 
             migrationBuilder.DropTable(
-                name: "Photos");
+                name: "AppSettings");
 
             migrationBuilder.DropTable(
-                name: "AppSettings");
+                name: "Likes");
+
+            migrationBuilder.DropTable(
+                name: "Photos");
 
             migrationBuilder.DropTable(
                 name: "Users");

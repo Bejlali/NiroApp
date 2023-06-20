@@ -15,7 +15,9 @@ namespace API.Entities
         public string City { get; set; }
         public string Country { get; set; }
         public DateTime LastActive { get; set; } = DateTime.UtcNow;
-        public List<Photo> Photos { get; set; } = new();
+        public List<Photo> Photos { get; set; } = new();    
+        public List<UserLike> LikedByUsers { get; set; }
+        public List<UserLike> LikedUsers { get; set; }
         //my fields//---
         public string FName { get; set; }
         public string LName { get; set; }
@@ -37,10 +39,5 @@ namespace API.Entities
         public DateTime Created { get; set; } = DateTime.UtcNow;
         public DateTime LastModified { get; set; } = DateTime.UtcNow;
 
-
-        /*         public int GetAge()
-                {
-                    return DateOfBirth.CalcuateAge();
-                } */
     }
 }
