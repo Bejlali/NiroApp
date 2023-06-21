@@ -1,8 +1,21 @@
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
   <div class="container">
       <a class="navbar-brand" routerLink="/" routerLinkActive="active">Niro App</a>
+
+
+      <div class="dropdown" *ngIf="(accountService.currentUser$  | async)" dropdown>
+        <!-- <a class="dropdown-toggle text-light text-decoration-none ms-2" dropdownToggle>Welcome {{user.username | titlecase}}</a> -->
+        <a class="dropdown-toggle text-light text-decoration-none ms-2" dropdownToggle>Profiles</a>
+        <div class="dropdown-menu mt-3" *dropdownMenu>
+            <a class="dropdown-item" routerLink="/members">Users</a>
+            <a class="dropdown-item" routerLink="/lists">Lists</a>
+            <a class="dropdown-item" routerLink="/messages">Messages</a>
+        </div>
+      </div>
 <!--
       <ul class="navbar-nav me-auto mb-2 mb-md-0">
+
+
           <ng-container *ngIf="accountService.currentUser$  | async">
               <li class="nav-item">
                   <a class="nav-link" routerLink="/members" routerLinkActive="active">Profiles</a>
@@ -20,15 +33,6 @@
       </ul> -->
 
 
-      <div class="dropdown" *ngIf="(accountService.currentUser$  | async)" dropdown>
-        <!-- <a class="dropdown-toggle text-light text-decoration-none ms-2" dropdownToggle>Welcome {{user.username | titlecase}}</a> -->
-        <a class="dropdown-toggle text-light text-decoration-none ms-2" dropdownToggle>Profiles</a>
-        <div class="dropdown-menu mt-3" *dropdownMenu>
-            <a class="dropdown-item" routerLink="/members">Users</a>
-            <a class="dropdown-item" routerLink="/lists">Lists</a>
-            <a class="dropdown-item" routerLink="/messages">Messages</a>
-        </div>
-      </div>
 
 
       <div class="dropdown" *ngIf="(accountService.currentUser$  | async) as user" dropdown>
