@@ -127,7 +127,7 @@ export class MemberListComponent implements OnInit {
   resetFilters() {
     if (this.user) {
       this.userParams = new UserParams(this.user);
-      this.loadMembers();
+      this.loadMembers(); 
     }
   } */
   pageChanged(event: any) {
