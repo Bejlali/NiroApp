@@ -39,7 +39,7 @@ login(){
 
 logout(){
   this.accountService.logout();
-  this.router.navigateByUrl('/members')
+  this.router.navigateByUrl('/')
 
 }
 }
