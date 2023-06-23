@@ -32,12 +32,10 @@ namespace API.Entities
         public string Profile { get; set; }
         public string Role { get; set; }
         public string Department { get; set; }
-        public string Phone { get; set; }
         public string Extension { get; set; }
         public string Address { get; set; }
         public string Groups { get; set; }
         //General Fields
-        public string Parent_Id { get; set; }
         public string Status { get; set; }
         public string Type { get; set; }
         public string External_id { get; set; }
