@@ -57,3 +57,9 @@ C:\NiroApp\API\bin\Debug\net7.0\Data\UserSeedData.json
 C:\NiroApp\API\bin\Debug\net7.0\AutoMapper.dll
 C:\NiroApp\API\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\NiroApp\API\bin\Debug\net7.0\CloudinaryDotNet.dll
+C:\NiroApp\API\bin\Debug\net7.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\NiroApp\API\bin\Debug\net7.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\NiroApp\API\bin\Debug\net7.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\NiroApp\API\bin\Debug\net7.0\Microsoft.Extensions.Identity.Core.dll
+C:\NiroApp\API\bin\Debug\net7.0\Microsoft.Extensions.Identity.Stores.dll
+C:\NiroApp\API\bin\Debug\net7.0\Microsoft.Extensions.Options.dll
