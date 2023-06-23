@@ -1,6 +1,7 @@
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
   <div class="container">
-      <a class="navbar-brand" routerLink="/" routerLinkActive="active">Niro App</a>
+      <a class="navbar-brand" routerLink="/" routerLinkActive="active">
+      <img style="border: none;" src="{{'./assets/logo.png'}}" alt="logo"></a>
 
 
       <div class="dropdown" *ngIf="(accountService.currentUser$  | async)" dropdown>
@@ -12,13 +13,15 @@
             <a class="dropdown-item" routerLink="/messages">Messages</a>
         </div>
       </div>
-<!--
+
       <ul class="navbar-nav me-auto mb-2 mb-md-0">
 
 
           <ng-container *ngIf="accountService.currentUser$  | async">
               <li class="nav-item">
-                  <a class="nav-link" routerLink="/members" routerLinkActive="active">Profiles</a>
+                  <a class="nav-link" routerLink="/members"
+                    [routerLinkActiveOptions]="{exact: true}"
+                  routerLinkActive="active">Profiles</a>
               </li>
               <li class="nav-item">
                   <a class="nav-link" routerLink="/lists" routerLinkActive="active">Lists</a>
@@ -30,7 +33,7 @@
           <li class="nav-item">
             <a class="nav-link" routerLink="/errors" routerLinkActive="active">Errors</a>
            </li>
-      </ul> -->
+      </ul>
 
 
 

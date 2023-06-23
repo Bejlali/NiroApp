@@ -36,7 +36,7 @@ namespace API.Data
         public async Task<PagedList<MessageDto>> GetMessagesForUser(MessageParams messageParams)
         {
             var query = _context.Messages
-                .OrderByDescending(x => x.MessageSent)
+                .OrderBy(x => x.MessageSent)
                 .AsQueryable();
 
             query = messageParams.Container switch
