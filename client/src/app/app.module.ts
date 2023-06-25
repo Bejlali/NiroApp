@@ -31,6 +31,8 @@ import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';
 import { PhotoManagementComponent } from './admin/photo-management/photo-management.component';
 import { UserManagementComponent } from './admin/user-management/user-management.component';
 import { HasRoleDirective } from './_directives/has-role.directive';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { RolesModalComponent } from './modals/roles-modal/roles-modal.component';
 
 
 @NgModule({
@@ -55,7 +57,8 @@ import { HasRoleDirective } from './_directives/has-role.directive';
     AdminPanelComponent,
     PhotoManagementComponent,
     UserManagementComponent,
-    HasRoleDirective
+    HasRoleDirective,
+    RolesModalComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -66,6 +69,7 @@ import { HasRoleDirective } from './_directives/has-role.directive';
     ReactiveFormsModule,
     SharedModule,
     PaginationModule.forRoot(),
+    ModalModule.forRoot(),
 
 
   ],
