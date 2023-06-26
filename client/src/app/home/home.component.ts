@@ -36,13 +36,12 @@ export class HomeComponent implements OnInit {
   cancelRegisterMode(event: boolean) {
     this.registerMode = event;
   }
-  login(){
-    //console.log(this.model);
+  login() {
     this.accountService.login(this.model).subscribe({
-      // next: response =>this.router.navigateByUrl('/members'),
-      next: _ =>this.router.navigateByUrl('/members'),
-      // error: error => console.log(error)
-     // error: error => this.toastr.error(error.error)
+      next: _ => {
+        this.router.navigateByUrl('/members');
+        this.model = {};
+      }
     })
   }
 
