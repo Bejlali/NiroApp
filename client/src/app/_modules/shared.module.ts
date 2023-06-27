@@ -11,6 +11,7 @@ import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { TimeagoModule } from 'ngx-timeago';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import {DevExtremeModule} from 'devextreme-angular';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     PaginationModule.forRoot(),
     ButtonsModule.forRoot(),
     TimeagoModule.forRoot(),
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    DevExtremeModule
 
   ],
   exports: [
@@ -45,7 +47,8 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     PaginationModule,
     ButtonsModule,
     TimeagoModule,
-    ModalModule
+    ModalModule,
+    DevExtremeModule
 
 
   ]
