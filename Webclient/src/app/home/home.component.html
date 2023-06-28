@@ -1,0 +1,55 @@
+<div class="container mt-5">
+  <div *ngIf="!registerMode" style="text-align: center;">
+    <!-- <h1>Welcome To The Niro Companies</h1> -->
+    <img src="{{'./assets/logo.png'}}" alt="user photo">
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+
+    <div class="row justify-content-center">
+      <div class="col-4">
+        <form *ngIf="!(accountService.currentUser$ | async)" #loginForm="ngForm" class="d-flex" (ngSubmit)="login()"
+        autocomplete="off">
+        <input name="username" [(ngModel)]="model.username" class="form-control me-2" type="text"
+            placeholder="Username">
+        <input name="password" [(ngModel)]="model.password" class="form-control me-2" type="password"
+            placeholder="Password">
+        <button class="btn btn-success" type="submit">Login</button>
+    </form>
+
+      </div>
+    </div>
+    <br>
+    <br>
+    <p class="lead">If you don't have an account, please sign up first!
+    </p>
+    <div class="text-center">
+      <button (click)="registerToggle()" class="btn btn-primary btn-lg me-2">Register</button>
+
+    </div>
+
+  </div>
+
+  <div *ngIf="registerMode" class="container">
+    <div class="row justify-content-center">
+      <div class="col-4">
+        <!-- /<app-register (cancelRegister)="cancelRegisterMode($event)"></app-register> -->
+        <!-- <app-register (cancelRegister)="cancelRegisterMode($event)"></app-register> -->
+        <!-- <app-register [usersFromHomeComponent]="users" (cancelRegister)="cancelRegisterMode($event)"></app-register> -->
+        <app-register (cancelRegister)="cancelRegisterMode($event)"></app-register>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <app-nav></app-nav>
+
+<div class="container" style="margin-top: 100px;">
+    <app-home></app-home>
+</div>
+ -->
