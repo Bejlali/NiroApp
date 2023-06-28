@@ -5,7 +5,7 @@ export class AppInfoService {
   constructor() {}
 
   public get title() {
-    return 'Webclient';
+    return 'Niro App';
   }
 
   public get currentYear() {
